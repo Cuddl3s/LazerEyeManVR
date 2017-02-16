@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazerEyeMan.CSharp", "LazerEyeMan.CSharp.csproj", "{2C4F154A-B532-F0F5-A5A2-508101BDE6D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazerEyeMan.CSharp.Editor", "LazerEyeMan.CSharp.Editor.csproj", "{AD9F584C-4891-7C06-1568-4341D73E98B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C4F154A-B532-F0F5-A5A2-508101BDE6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C4F154A-B532-F0F5-A5A2-508101BDE6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C4F154A-B532-F0F5-A5A2-508101BDE6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C4F154A-B532-F0F5-A5A2-508101BDE6D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9F584C-4891-7C06-1568-4341D73E98B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9F584C-4891-7C06-1568-4341D73E98B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9F584C-4891-7C06-1568-4341D73E98B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9F584C-4891-7C06-1568-4341D73E98B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
