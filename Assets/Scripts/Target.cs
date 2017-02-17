@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class Target : MonoBehaviour
 {
     public float forceAdjust;
     private Vector3 toPlayer;
+
+    public enum HitType
+    {
+        GoIn, On
+    }
 
     // Use this for initialization
     void Start ()
@@ -29,13 +36,31 @@ public class Target : MonoBehaviour
 
     public void hitTarget()
     {
+        
+            destroy();
+        
+            
+    }
+
+    public void hitDelayed()
+    {
+        StartCoroutine(ExecuteAfterTime(0.05f));
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        destroy();
+    }
+
+    void destroy()
+    {
         if (ShooterPlayer.INSTANCE.shooting)
         {
-            print("Target Hit");
             GameManager.INSTANCE.targetDestroyed(transform.position);
             Destroy(gameObject);
         }
-        
     }
 
     void OnCollisionEnter(Collision col)

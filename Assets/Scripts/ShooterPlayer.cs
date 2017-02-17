@@ -77,14 +77,21 @@ public class ShooterPlayer : MonoBehaviour
 	    {
             if (GvrViewer.Instance.Triggered || Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
             {
-                if (!shooting)
+                //if (!shooting)
+                //{
+                if (!overHeat)
                 {
-                    if (!overHeat && GlassesManager.click()) shoot();
+                    shoot();
                 }
-                else
-                {
-                    stopShooting(true);
-                }
+//                }
+//                else
+//                {
+                    
+//                }
+            }
+            else if (GvrViewer.Instance.Triggered || Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended && shooting)
+            {
+                stopShooting(true);
             }
             if (shooting)
             {
@@ -112,7 +119,7 @@ public class ShooterPlayer : MonoBehaviour
 
     void shoot()
     {
-
+        GlassesManager.open();
         left.gameObject.SetActive(true);
         right.gameObject.SetActive(true);
         beam.Play();
@@ -130,14 +137,14 @@ public class ShooterPlayer : MonoBehaviour
 
     void stopShooting(bool clicked)
     {
-        if (GlassesManager.click())
-        {
+
+            GlassesManager.close();
             beam.Stop();
             left.gameObject.SetActive(false);
             right.gameObject.SetActive(false);
             shooting = false;
             overHeat = !clicked;
-        }   
+         
     }
 
     public void getHit()

@@ -32,24 +32,14 @@ public class GlassesManager : MonoBehaviour
         }  
     }
 
-    public bool click()
+    public void open()
     {
-        if (movementDone)
+        if (!isOpen)
         {
-            if (!isOpen)
-            {
-                toPosition = openPos.localPosition;
-                movementDone = false;
-                isOpen = true;
-                return true;
-            }
-            else
-            {
-                close();
-                return true;
-            }
+            toPosition = openPos.localPosition;
+            movementDone = false;
+            isOpen = true;
         }
-        return false;
     }
 
     public void close()

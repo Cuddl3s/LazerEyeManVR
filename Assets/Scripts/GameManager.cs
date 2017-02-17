@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public SpawnerManager SpawnerManager;
     public int upIntensityEvery;
+    private int currentUpIntensityEvery;
 
     public static GameManager INSTANCE;
 
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
         Instantiate(explosion, position, Quaternion.identity);
         if (++destroyedCubes % upIntensityEvery == 0)
         {
+            currentUpIntensityEvery += 2;
             SpawnerManager.intensityUp();
             multiplicator++;
         }
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     void reset()
     {
+        currentUpIntensityEvery = upIntensityEvery;
         running = false;
         destroyedCubes = 0;
         points = 0;
